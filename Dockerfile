@@ -4,6 +4,9 @@ MAINTAINER louisbl <louis@beltramo.me>
 # Set memory limit
 RUN echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
+# Install git
+RUN apt-get update && apt-get install -y --no-install-recommends git
+
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
